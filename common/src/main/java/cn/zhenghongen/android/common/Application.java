@@ -4,10 +4,13 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
+import cn.zhenghongen.android.common.ui.ToastUtils;
+import cn.zhenghongen.android.common.volley.RequestManager;
+
 /**
  * Created by ZhengHongEn on 2015/10/29.
  */
-public class Application extends android.app.Application {
+public abstract class Application extends android.app.Application {
     private static final String TAG = "Application";
 
     private static Context context;
@@ -17,6 +20,10 @@ public class Application extends android.app.Application {
         super.onCreate();
 
         context = getApplicationContext();
+
+        //init
+        ToastUtils.init(context);
+        RequestManager.init(context);
     }
 
     public static Context getContext() {
@@ -30,7 +37,7 @@ public class Application extends android.app.Application {
      * @return
      */
     public static String getAppVersion() {
-        String appVersion = "1.0";
+        String appVersion = "";
         PackageManager manager = context.getPackageManager();
         try {
             PackageInfo info = manager.getPackageInfo(context.getPackageName(), 0);

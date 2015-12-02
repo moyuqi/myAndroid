@@ -19,10 +19,6 @@ public class RequestManager {
     private static RequestQueue mRequestQueue;
     private static ImageLoader mImageLoader;
 
-    private RequestManager() {
-        // no instances
-    }
-
     public static void init(Context context) {
         mRequestQueue = Volley.newRequestQueue(context);
 
