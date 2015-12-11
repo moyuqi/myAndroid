@@ -36,12 +36,30 @@ public abstract class Application extends android.app.Application {
      *
      * @return
      */
-    public static String getAppVersion() {
-        String appVersion = "";
+    public static String getAppVersionName() {
+        String appVersion = "1.0";
         PackageManager manager = context.getPackageManager();
         try {
             PackageInfo info = manager.getPackageInfo(context.getPackageName(), 0);
             appVersion = info.versionName; //版本名
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return appVersion;
+    }
+
+    /**
+     * 获取app版本号
+     * 也可以通过BuildConfig.VERSION_NAME 获取
+     *
+     * @return
+     */
+    public static int getAppVersionCode() {
+        int appVersion = 1;
+        PackageManager manager = context.getPackageManager();
+        try {
+            PackageInfo info = manager.getPackageInfo(context.getPackageName(), 0);
+            appVersion = info.versionCode; //版本名
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
