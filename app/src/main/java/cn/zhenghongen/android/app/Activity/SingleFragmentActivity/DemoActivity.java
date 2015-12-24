@@ -1,4 +1,4 @@
-package cn.zhenghongen.android.app.Activity.SingleFragmentActivity;
+package cn.zhenghongen.android.app.activity.singleFragmentActivity;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -11,7 +11,7 @@ import cn.zhenghongen.android.common.activity.SingleFragmentActivity;
 /**
  * 注意事项：
  * 1.onCreate如果setContentView的话，layout里要添加FrameLayout，并且id一定是fragmentContainer；
- *   onCreate如果不setContentView的话，会调用默认的layout
+ * onCreate如果不setContentView的话，会调用默认的layout
  * 2.要实现 createFragment 方法
  */
 public class DemoActivity extends SingleFragmentActivity {
@@ -27,8 +27,8 @@ public class DemoActivity extends SingleFragmentActivity {
         return new SingleFragment();
     }
 
-    public static void actionStart(Context context){
-        Intent intent = new Intent(context,DemoActivity.class);
+    public static void start(Context context) {
+        Intent intent = new Intent(context, DemoActivity.class);
         context.startActivity(intent);
     }
 }

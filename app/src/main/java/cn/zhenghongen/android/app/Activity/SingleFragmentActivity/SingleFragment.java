@@ -1,4 +1,4 @@
-package cn.zhenghongen.android.app.Activity.SingleFragmentActivity;
+package cn.zhenghongen.android.app.activity.singleFragmentActivity;
 
 import android.app.Fragment;
 import android.os.Bundle;
