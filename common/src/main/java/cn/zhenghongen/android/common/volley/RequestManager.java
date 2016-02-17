@@ -20,7 +20,7 @@ public class RequestManager {
     private static ImageLoader mImageLoader;
 
     public static void init(Context context) {
-        mRequestQueue = Volley.newRequestQueue(context);
+        mRequestQueue = Volley.newRequestQueue(context, new OkHttpStack());
 
         int memClass = ((ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE))
                 .getMemoryClass();
