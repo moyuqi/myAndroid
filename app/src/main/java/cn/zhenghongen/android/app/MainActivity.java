@@ -8,8 +8,9 @@ import android.widget.Button;
 
 import cn.zhenghongen.android.app.activity.singleFragmentActivity.DemoActivity;
 import cn.zhenghongen.android.app.ui.ToastActivity;
+import cn.zhenghongen.android.app.widget.PopupWindowActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     protected Activity activity;
 
     @Override
@@ -18,21 +19,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         activity = this;
+    }
 
-        //单Fragment
-        ((Button) this.findViewById(R.id.btn_single_fragment)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_single_fragment://单Fragment
                 DemoActivity.start(activity);
-            }
-        });
-
-        //Toast
-        ((Button) this.findViewById(R.id.btn_toast)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.btn_toast://Toast
                 ToastActivity.start(activity);
-            }
-        });
+                break;
+            case R.id.btn_popup_window://PopupWindow
+                PopupWindowActivity.start(activity);
+                break;
+            default:
+                break;
+        }
     }
 }

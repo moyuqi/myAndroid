@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.singleFragmentActivity.DemoActivity" />
-        <activity android:name=".ui.ToastActivity"></activity>
+        <activity android:name=".ui.ToastActivity" />
+        <activity android:name=".widget.PopupWindowActivity"></activity>
     </application>
 
 </manifest>

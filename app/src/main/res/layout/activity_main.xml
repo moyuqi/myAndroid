@@ -14,11 +14,20 @@
         android:id="@+id/btn_single_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
         android:text="单Fragment" />
 
     <Button
         android:id="@+id/btn_toast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
         android:text="Toast" />
+
+    <Button
+        android:id="@+id/btn_popup_window"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="PopupWindow" />
 </LinearLayout>
